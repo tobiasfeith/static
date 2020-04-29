@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Upload to AWS') {
       steps {
-        withAWS(credentials:'AKIAZQBYRF7SSQCD7RES') {
+        withAWS(credentials:'aws-static') {
           s3Upload(file:'.', bucket:'jenkins-20200429', path:'.')
         }
       }
